@@ -1,0 +1,15 @@
+version: "3"
+services:
+  golang: #docker run -it -v ${PWD}:/work:Z -w /work brybacki/gospace:1.0.0 /bin/sh                       
+    container_name: gospace 
+    image: brybacki/gospace:1.0.0 
+    build: ./golang
+    working_dir: /work
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
+    volumes: 
+    - ./golang/:/work:z
+    ports:
+    - 5000:5000
+
